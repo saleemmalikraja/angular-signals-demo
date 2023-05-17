@@ -7,7 +7,9 @@ import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
 } from '@angular/platform-browser/animations';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { Demo1WhySignalsComponent } from './demo1-why-signals/demo1-why-signals.component';
 @Component({
   selector: 'my-app',
   standalone: true,
@@ -19,5 +21,16 @@ import { provideRouter } from '@angular/router';
 export class App {
   name = 'Angular';
 }
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'whysignals', component: Demo1WhySignalsComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' },
+];
 
-bootstrapApplication(App,  { providers: [provideRouter([]), importProvidersFrom(BrowserAnimationsModule)] });
+bootstrapApplication(App, {
+  providers: [
+    provideRouter(appRoutes),
+    importProvidersFrom(BrowserAnimationsModule),
+  ],
+});

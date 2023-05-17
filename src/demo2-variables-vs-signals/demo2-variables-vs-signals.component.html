@@ -10,9 +10,9 @@
       c = a+b ; // <span> {{ a + b }}</span>
     </p>
     <p>=========</p>
-    <p>Let a = {{ a }}</p>
+    <p (click)="modifyA()">Let a = {{ a }}</p>
     <p>=========</p>
-    <p (click)="modifyA()">
+    <p>
       c = a+b ; // <span> {{ reactToChanges1 }}</span>
     </p>
   </mat-card-content>

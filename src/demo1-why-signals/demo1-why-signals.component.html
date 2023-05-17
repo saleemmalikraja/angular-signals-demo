@@ -1,12 +1,28 @@
-works sdfsdfsd
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>Copy by value</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Let a = {{ a }};</p>
+    <p>Let b = {{ b }}</p>
+    <p>Let b = {{ b }}</p>
+    <p *ngIf="getC()">c = a+b ; // {{ c }}</p>
+    <p>=========</p>
+    <p *ngIf="modifyA()">Let a = {{ a }}</p>
+    <p>=========</p>
+    <p *ngIf="modifyA()">c = a+b ; // {{ c }}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title></mat-card-title>
+    <mat-card-subtitle>React to changes ?</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>Let a = 10;</p>
     <p>Let b = 20;</p>
-    <p>Let c = 30;</p>
+    <p>Let c = a + b</p>
   </mat-card-content>
 </mat-card>

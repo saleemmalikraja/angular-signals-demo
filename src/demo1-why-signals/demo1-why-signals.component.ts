@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
@@ -6,10 +7,23 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './demo1-why-signals.component.html',
   styleUrls: ['./demo1-why-signals.component.css'],
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, CommonModule],
 })
 export class Demo1WhySignalsComponent implements OnInit {
+  a = 10;
+  b = 20;
+  c = 0;
   constructor() {}
 
   ngOnInit() {}
+
+  getC() {
+    this.c = this.a + this.b;
+    return this.c;
+  }
+
+  modifyA() {
+    this.a = 11;
+    return this.a;
+  }
 }

@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, computed, OnInit, signal } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-demo2-variables-vs-signals',
   templateUrl: './demo2-variables-vs-signals.component.html',
   styleUrls: ['./demo2-variables-vs-signals.component.css'],
+  standalone: true,
+  imports: [CommonModule, MatCardModule],
 })
 export class Demo2VariablesVsSignalsComponent implements OnInit {
   a = 10;
@@ -12,11 +16,18 @@ export class Demo2VariablesVsSignalsComponent implements OnInit {
 
   d = 0;
 
-  constructor() {}
+  x = signal(10);
+  y = signal(20);
 
-  get reactToChanges1() {
-    return this.a + this.b;
+  z = computed(() => {
+    console.log('Computed called');
+    return this.x() + this.y();
+  });
+
+  constructor() {
+    console.log('Constructor called');
   }
+
   ngOnInit() {}
 
   getC() {
@@ -24,8 +35,16 @@ export class Demo2VariablesVsSignalsComponent implements OnInit {
     return this.c;
   }
 
+  get reactToChanges1() {
+    return this.a + this.b;
+  }
+
   modifyA() {
     this.a = 11;
     return this.a;
+  }
+
+  signalA() {
+    return this.x.set(11);
   }
 }

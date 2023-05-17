@@ -7,13 +7,33 @@
     <p>Let a = {{ a }};</p>
     <p>Let b = {{ b }}</p>
     <p>
-      c = a+b ; // <span> {{ c }}</span>
+      c = a+b ; // <span> {{ a + b }}</span>
     </p>
     <p>=========</p>
-    <p *ngIf="modifyA()">Let a = {{ a }}</p>
+    <p>Let a = {{ a }}</p>
     <p>=========</p>
-    <p *ngIf="modifyA()">
+    <p (click)="modifyA()">
       c = a+b ; // <span> {{ reactToChanges1 }}</span>
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Reactive - Signals</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Let x = {{ x() }};</p>
+    <p>Let y = {{ y() }}</p>
+    <p>
+      z = x+y ; // <span> {{ x() + y() }}</span>
+    </p>
+    <p>=========</p>
+    <p>Let x = {{ x() }}</p>
+    <p>=========</p>
+    <p (click)="signalA()">
+      z = x+y ; // <span> {{ z() }}</span>
     </p>
   </mat-card-content>
 </mat-card>

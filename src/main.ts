@@ -10,6 +10,7 @@ import {
 import { provideRouter, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { Demo1WhySignalsComponent } from './demo1-why-signals/demo1-why-signals.component';
+import { Demo2VariablesVsSignalsComponent } from './demo2-variables-vs-signals/demo2-variables-vs-signals.component';
 @Component({
   selector: 'my-app',
   standalone: true,
@@ -24,6 +25,7 @@ export class App {
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'whysignals', component: Demo1WhySignalsComponent },
+  { path: 'variablevssignal', component: Demo2VariablesVsSignalsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },
 ];

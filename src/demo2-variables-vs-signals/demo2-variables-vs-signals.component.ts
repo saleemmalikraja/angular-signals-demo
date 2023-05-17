@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, OnInit, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -7,7 +8,7 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './demo2-variables-vs-signals.component.html',
   styleUrls: ['./demo2-variables-vs-signals.component.css'],
   standalone: true,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule],
 })
 export class Demo2VariablesVsSignalsComponent implements OnInit {
   a = 10;

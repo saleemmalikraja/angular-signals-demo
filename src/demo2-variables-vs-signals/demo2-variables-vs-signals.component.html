@@ -10,7 +10,9 @@
       c = a+b ; // <span> {{ a + b }}</span>
     </p>
     <p>=========</p>
-    <p (click)="modifyA()">Let a = {{ a }}</p>
+    <button mat-flat-button color="primary" (click)="modifyA()">
+      Click here to change A
+    </button>
     <p>=========</p>
     <p>
       c = a+b ; // <span> {{ reactToChanges1 }}</span>
@@ -30,9 +32,12 @@
       z = x+y ; // <span> {{ x() + y() }}</span>
     </p>
     <p>=========</p>
-    <p>Let x = {{ x() }}</p>
+
+    <button mat-flat-button color="primary" (click)="signalA()">
+      Click here to set Signal X
+    </button>
     <p>=========</p>
-    <p (click)="signalA()">
+    <p>
       z = x+y ; // <span> {{ z() }}</span>
     </p>
   </mat-card-content>

@@ -13,8 +13,13 @@ export class Demo1WhySignalsComponent implements OnInit {
   a = 10;
   b = 20;
   c = 0;
+
+  d = 0;
   constructor() {}
 
+  get reactToChanges1() {
+    return this.a + this.b;
+  }
   ngOnInit() {}
 
   getC() {

@@ -26,7 +26,6 @@ export class Demo1WhySignalsComponent implements OnInit {
   }
 
   modifyA() {
-    this.a = 11;
-    return this.a;
+    return (this.a = 11);
   }
 }

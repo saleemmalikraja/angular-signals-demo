@@ -46,6 +46,6 @@ export class Demo2VariablesVsSignalsComponent implements OnInit {
   }
 
   signalA() {
-    return this.x.set(11);
+    return this.x.set(11); // replaces with new value
   }
 }

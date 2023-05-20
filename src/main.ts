@@ -13,6 +13,7 @@ import { Demo1WhySignalsComponent } from './demo1-why-signals/demo1-why-signals.
 import { Demo2VariablesVsSignalsComponent } from './demo2-variables-vs-signals/demo2-variables-vs-signals.component';
 import { Demo0ChangeDetectionComponent } from './demo0-change-detection/demo0-change-detection.component';
 import { Demo3CreateReadSignalComponent } from './demo3-create-read-signal/demo3-create-read-signal.component';
+import { Demo4WriteSignalComponent } from './demo4-write-signal/demo4-write-signal.component';
 @Component({
   selector: 'my-app',
   standalone: true,
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'whysignals', component: Demo1WhySignalsComponent },
   { path: 'variablevssignal', component: Demo2VariablesVsSignalsComponent },
   { path: 'createreadsignal', component: Demo3CreateReadSignalComponent },
+  { path: 'writesignal', component: Demo4WriteSignalComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },
 ];

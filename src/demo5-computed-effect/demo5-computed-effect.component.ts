@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal, computed } from '@angular/core';
+import { Component, OnInit, signal, computed, effect } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -42,6 +42,8 @@ export class Demo5ComputedEffectComponent {
   // offerPercentage = signal(5);
   items = signal<Item[]>([]);
 
+  eff = effect(() => console.log('Latest Item detail:', this.selectedItem()));
+
   onDropdownChange(qty: number) {
     this.quantity.set(qty);
     this.selectedItem.mutate((item) => {
@@ -49,6 +51,6 @@ export class Demo5ComputedEffectComponent {
         (item.original * this.quantity() * this.offerPercentage()) / 100;
       return (item.price = item.original * this.quantity() - toBeDeducted);
     });
-    console.log('New Selected Item', this.selectedItem());
+    // console.log('New Selected Item', this.selectedItem());
   }
 }

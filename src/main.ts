@@ -15,6 +15,7 @@ import { Demo0ChangeDetectionComponent } from './demo0-change-detection/demo0-ch
 import { Demo3CreateReadSignalComponent } from './demo3-create-read-signal/demo3-create-read-signal.component';
 import { Demo4WriteSignalComponent } from './demo4-write-signal/demo4-write-signal.component';
 import { Demo5ComputedEffectComponent } from './demo5-computed-effect/demo5-computed-effect.component';
+import { Demo6SignalVsObservableComponent } from './demo6-signal-vs-observable/demo6-signal-vs-observable.component';
 @Component({
   selector: 'my-app',
   standalone: true,
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'createreadsignal', component: Demo3CreateReadSignalComponent },
   { path: 'writesignal', component: Demo4WriteSignalComponent },
   { path: 'computedeffect', component: Demo5ComputedEffectComponent },
+  { path: 'signalvsobs', component: Demo6SignalVsObservableComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },
 ];

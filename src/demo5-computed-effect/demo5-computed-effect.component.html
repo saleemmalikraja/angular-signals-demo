@@ -11,4 +11,7 @@
   </mat-select>
 </mat-form-field>
 <br />
-Update price for the item : {{ selectedItem().price }}
+Update price for the item :
+<span style="font-weight : bold" [style.color]="color()">
+  {{ selectedItem().price }}</span
+>

@@ -39,6 +39,10 @@ export class Demo5ComputedEffectComponent {
     // Calculate the percentage based on the quantity
     return this.quantity() * 5;
   });
+
+  color = computed(() => {
+    return this.quantity() > 2 ? 'green' : 'blue';
+  });
   // offerPercentage = signal(5);
   items = signal<Item[]>([]);
 

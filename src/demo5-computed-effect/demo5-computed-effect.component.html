@@ -1,1 +1,14 @@
-<p>demo5-computed-effect workss!</p>
+<h4>Signal Mutate</h4>
+<mat-form-field>
+  <mat-label>Item Quantity</mat-label>
+  <mat-select
+    (selectionChange)="onDropdownChange($event.value)"
+    [value]="quantity()"
+  >
+    <mat-option *ngFor="let qty of qtyAvailable()" [value]="qty">
+      {{ qty }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br />
+Update price for the item : {{ selectedItem().price }}

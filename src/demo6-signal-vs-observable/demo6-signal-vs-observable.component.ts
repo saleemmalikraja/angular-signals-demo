@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal, computed } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 import { BehaviorSubject, combineLatest, map, tap, debounceTime } from 'rxjs';
 @Component({
@@ -12,18 +11,10 @@ import { BehaviorSubject, combineLatest, map, tap, debounceTime } from 'rxjs';
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatBadgeModule],
 })
-export class Demo6SignalVsObservableComponent implements OnInit {
+export class Demo6SignalVsObservableComponent {
   public firstName = new BehaviorSubject('Peter');
   public lastName = new BehaviorSubject('Parker');
   public fullNameCounter = 0;
-
-  public firstNameDebounce = new BehaviorSubject('Peter');
-  public lastNameDebounce = new BehaviorSubject('Parker');
-
-  public fullNameCounterDebounce = 0;
-  constructor() {}
-
-  ngOnInit() {}
 
   public fullName$ = combineLatest([this.firstName, this.lastName]).pipe(
     tap(() => {
@@ -36,6 +27,11 @@ export class Demo6SignalVsObservableComponent implements OnInit {
     this.firstName.next('Spider');
     this.lastName.next('Man');
   }
+
+  /* Debounce Implementation */
+  public firstNameDebounce = new BehaviorSubject('Peter');
+  public lastNameDebounce = new BehaviorSubject('Parker');
+  public fullNameCounterDebounce = 0;
 
   public fullNameDebounce$ = combineLatest([
     this.firstNameDebounce,
@@ -54,5 +50,22 @@ export class Demo6SignalVsObservableComponent implements OnInit {
   public changeNameDebounce() {
     this.firstNameDebounce.next('Debounced Spider');
     this.lastNameDebounce.next('Man');
+  }
+
+  /* Signal Implementation */
+  firstNameSignal = signal('Peter');
+  lastNameSignal = signal('Parker');
+
+  signalCounter = 0;
+
+  fullNameSignal = computed(() => {
+    this.signalCounter++;
+    console.log('signal name change');
+    return `${this.firstNameSignal()} ${this.lastNameSignal()}`;
+  });
+
+  changeNameSignal() {
+    this.firstNameSignal.set('Signal Spider');
+    this.lastNameSignal.set('Man');
   }
 }

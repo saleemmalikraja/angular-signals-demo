@@ -53,3 +53,32 @@
 >
   Action
 </button>
+
+=========================================================================
+
+<br /><br /><br /><br /><br />
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Full Name</th>
+  </tr>
+  <tr>
+    <td>{{ firstNameSignal() }}</td>
+    <td>{{ lastNameSignal() }}</td>
+    <td>{{ fullNameSignal() }}</td>
+  </tr>
+</table>
+<br />
+<button
+  mat-raised-button
+  color="primary"
+  style="margin-left  : 15px"
+  matBadge="{{ signalCounter }}"
+  matBadgePosition="before"
+  matBadgeColor="accent"
+  (click)="changeNameSignal()"
+>
+  Action
+</button>

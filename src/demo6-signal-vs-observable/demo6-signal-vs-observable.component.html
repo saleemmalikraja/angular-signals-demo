@@ -2,11 +2,54 @@
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
-    <th>Name</th>
+    <th>Full Name</th>
   </tr>
   <tr>
-    <td>Saleem</td>
-    <td>Malik</td>
-    <td>Saleem Malik</td>
+    <td>{{ firstName | async }}</td>
+    <td>{{ lastName | async }}</td>
+    <td>{{ fullName$ | async }}</td>
   </tr>
 </table>
+<br />
+
+<button
+  mat-raised-button
+  color="primary"
+  style="margin-left  : 15px"
+  matBadge="{{ fullNameCounter }}"
+  matBadgePosition="before"
+  matBadgeColor="accent"
+  (click)="changeName()"
+>
+  Action
+</button>
+
+<br /><br /><br /><br /><br />
+=========================================================================
+
+<br /><br /><br /><br /><br />
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Full Name</th>
+  </tr>
+  <tr>
+    <td>{{ firstNameDebounce | async }}</td>
+    <td>{{ lastNameDebounce | async }}</td>
+    <td>{{ fullNameDebounce$ | async }}</td>
+  </tr>
+</table>
+<br />
+<button
+  mat-raised-button
+  color="primary"
+  style="margin-left  : 15px"
+  matBadge="{{ fullNameCounterDebounce }}"
+  matBadgePosition="before"
+  matBadgeColor="accent"
+  (click)="changeNameDebounce()"
+>
+  Action
+</button>

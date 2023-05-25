@@ -31,6 +31,10 @@ export class Demo2VariablesVsSignalsComponent implements OnInit {
 
   ngOnInit() {}
 
+  signalA() {
+    return this.x.set(11); // replaces with new value
+  }
+
   getC() {
     this.c = this.a + this.b;
     return this.c;
@@ -43,9 +47,5 @@ export class Demo2VariablesVsSignalsComponent implements OnInit {
   modifyA() {
     this.a = 11;
     return this.a;
-  }
-
-  signalA() {
-    return this.x.set(11); // replaces with new value
   }
 }

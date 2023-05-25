@@ -16,14 +16,11 @@ export class Demo1WhySignalsComponent implements OnInit {
 
   d = 0;
 
-  constructor() {}
+  constructor() {
+    this.c = this.a + this.b;
+  }
 
   ngOnInit() {}
-
-  getC() {
-    this.c = this.a + this.b;
-    return this.c;
-  }
 
   modifyA() {
     return (this.a = 11);

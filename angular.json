@@ -70,7 +70,11 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": ["styles.css"],
             "scripts": [],
-            "assets": ["src/favicon.ico", "src/assets"]
+            "assets": [
+              "src/favicon.ico",
+              "src/angularsignals-smr.png",
+              "src/assets"
+            ]
           }
         },
         "lint": {

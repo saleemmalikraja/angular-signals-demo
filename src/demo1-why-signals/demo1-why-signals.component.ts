@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./demo1-why-signals.component.css'],
   standalone: true,
   imports: [MatCardModule, CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Demo1WhySignalsComponent implements OnInit {
   a = 10;

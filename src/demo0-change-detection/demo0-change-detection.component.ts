@@ -9,7 +9,7 @@ import { ComponentTwoComponent } from './component-two/component-two.component';
   styleUrls: ['./demo0-change-detection.component.css'],
   imports: [NgIf, ComponentOneComponent, ComponentTwoComponent],
   standalone: true,
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Demo0ChangeDetectionComponent implements OnInit {
   constructor() {}

@@ -8,7 +8,7 @@ import { SharedButtonComponent } from '../shared-button/shared-button.component'
   styleUrls: ['./component-two.component.css'],
   imports: [NgIf, SharedButtonComponent],
   standalone: true,
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComponentTwoComponent {
   public count = 0;

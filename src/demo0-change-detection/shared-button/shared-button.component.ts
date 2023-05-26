@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   templateUrl: './shared-button.component.html',
   styleUrls: ['./shared-button.component.css'],
   standalone: true,
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SharedButtonComponent implements OnInit {
   constructor() {}

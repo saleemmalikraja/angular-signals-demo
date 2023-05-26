@@ -30,6 +30,7 @@ interface Food {
   ],
 })
 export class Demo3CreateReadSignalComponent {
+  test = signal(1);
   firstSignal = signal<string>('Hello World Signal');
 
   foodsSignal = signal<Food[]>([

@@ -51,8 +51,7 @@ export class Demo5ComputedEffectComponent {
   onDropdownChange(qty: number) {
     this.quantity.set(qty);
     this.selectedItem.mutate((item) => {
-      let toBeDeducted: any =
-        (item.original * this.quantity() * this.offerPercentage()) / 100;
+      let toBeDeducted: any = (item.original * this.offerPercentage()) / 100;
       return (item.price = item.original * this.quantity() - toBeDeducted);
     });
     // console.log('New Selected Item', this.selectedItem());

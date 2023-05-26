@@ -41,6 +41,7 @@ export class Demo2VariablesVsSignalsComponent implements OnInit {
   }
 
   get reactToChanges1() {
+    console.log('React to changes');
     return this.a + this.b;
   }
 
